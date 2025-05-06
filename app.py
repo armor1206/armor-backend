@@ -22,5 +22,8 @@ def upload_file():
     # For now, just return success
     return jsonify({"message": "File uploaded", "filename": filename})
 
+import os
+
+port = int(os.environ.get('PORT', 10000))
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000)
+    app.run(host='0.0.0.0', port=port)
